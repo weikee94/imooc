@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <title>Directives - Angular JS</title>
+<head>
+</head>
+<body>
+<!-- Explanation 
+- AngularJS lets you extend HTML with new attributes called Directives.
+- AngularJS has a set of built-in directives which offers functionality to your applications.
+- AngularJS also lets you define your own directives.
+- AngularJS 通过被称为 指令 的新属性来扩展 HTML
+- AngularJS 通过内置的指令来为应用添加功能
+- AngularJS 允许你自定义指令
+-->
+    
+
+<div ng-app="testDirective">
+    <div ng-init = "school = ['qut', 'uq']">
+        <p>School Name</p>
+        <ul>
+            <li ng-repeat="x in school">
+            {{x}}
+            </li>
+        </ul>
+    </div>
+    
+    <div ng-init = "names = [{name: 'Jack', school: 'QUT'},{name: 'James', school: 'UQ'}]">
+        <p>Person and School Name</p>
+        <ul>
+            <li ng-repeat="y in names">
+                Name: {{y.name}} <br>School: {{y.school}}
+            </li>
+        </ul>
+    </div>
+
+    <p>We also able to create our own directives using .directive function. In order to invoke the new directive, we can make an HTML element with the same tag name as the new directive. When naming a directive, you must use a camel name, like: thisIsCamelName, but when invoking it, you must use - as a seperated name, below is the example to demonstrate.</p>
+    
+    <p>You can invoke a directive by using</p>
+    <ul>
+        <li>Element Name</li>
+        <li>Attribute</li>
+        <li>Class</li>
+        <li>Comment</li>
+    </ul>
+    
+    <test-directive></test-directive>
+
+</div>
+
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script> 
+<script>
+    angular.module("testDirective",[]).directive("testDirective",function(){
+       return{
+           template: "<h1>Hi this is make by directive!</h1>"
+       }; 
+    });
+</script>
+</body>
+</html>
