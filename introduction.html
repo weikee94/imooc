@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Angular One</title>
+</head>
+<body>
+<!--
+Explanation state below
+    ng-app: defines an AngularJS application. 指令定义一个 AngularJS 应用程序
+    ng-model: binds the value of HTML controls(input, select, textarea) to application data. 指令把元素值（比如输入域的值）绑定到应用程序
+    ng-bind: binds application data to the HTML view. 指令把应用程序数据绑定到 HTML 视图
+    ng-init: initializes AngularJS application variables. 指令初始化 AngularJS 应用程序变量。
+    
+注意:
+- 如果您移除了 ng-app 指令，HTML 将直接把表达式显示出来，不会去计算表达式的结果。
+- HTML5 允许扩展的（自制的）属性，以 data- 开头。AngularJS 属性以 ng- 开头，但是您可以使用 data-ng- 来让网页对 HTML5 有效。
+
+AngularJS Expressions
+- expressions are written inside double braces: {{ expression }}, this is exactly the same as the ng-bind directive. 表达式写在双大括号内
+
+AngularJS Modules
+- module is a container for the different parts of an application.
+- controllers always belong to a module.
+-  模块（Module） 定义了 AngularJS 应用
+    
+Angular Controller
+- 控制器（Controller） 用于控制 AngularJS 应用
+
+AngularJS Directives
+- this is built-in directives which you can use to add functionality to your application.
+- in additon you can use the module to add your own directives to your applications.
+
+-->
+    
+<!--Example One-->
+<!-- 
+<div ng-app="">
+    <p>Name: <input type="text" ng-model="name"></p>
+    <h1>Hello {{name}}</h1>
+</div>-->
+    
+    
+<!--Example Two
+ng-app指令定义了应用, ng-controller 定义了控制器 -->
+<div ng-app="myApp" ng-controller="myCtrl">
+    <p>First Name: <input type="text" ng-model="firstName"></p>
+    <p>Last Name: <input type="text" ng-model="lastName"></p>
+    <p>Full Name: {{firstName + " " + lastName}} </p>
+</div>
+        
+    
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+angular.module("myApp",[]).controller("myCtrl", function($scope) {
+    $scope.firstName= "Lebron";
+    $scope.lastName= "James";
+});
+</script>
+</body>
+</html>
