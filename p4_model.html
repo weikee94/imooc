@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Model - Angular JS</title>
+</head>
+<style>
+    input.ng-invalid {
+        background-color: lightcoral;
+    }
+</style>
+<body>
+    
+<!-- this is what we called two way binding-->
+    <div ng-app="myApp" ng-controller="myCtrl">
+        Name: <input ng-model="name" required>
+        <h1>This is the output: {{ name }} </h1>
+        
+         <p>The ng-model directives adds/removes the following classes, according to the status of the form field:</p>
+        <ul>
+            <li ng-repeat="x in arrs">
+                {{x}}
+            </li>
+        </ul>
+    
+    </div>
+    
+
+
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script> 
+<script>
+    angular.module("myApp",[]).controller("myCtrl",function($scope){
+        $scope.name = "Angular JS";
+        $scope.arrs = ["ng-empty", "ng-not-empty","ng-touched","ng-untouched","ng-valid","ng-invalid","ng-dirty","ng-pending","ng-pristine"];
+    });
+</script>
+</body>
+</html>
