@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Scope - Angular JS</title>
+</head>
+<body>
+    
+    <div ng-app="testScope" ng-controller="myScope">
+        <p>Name : {{ name }}</p>
+        <p>Normally we will say that angular has three main components which is</p>
+        <ul>
+            <li ng-repeat="var in arrs">
+                {{ var }}
+            </li>
+        </ul>
+    </div>
+
+    
+
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script> 
+<script>
+    angular.module("testScope",[]).controller("myScope",function($scope){
+       $scope.name = "James"; 
+       $scope.arrs = ["View", "Model", "Controller"];
+    });
+</script>
+</body>
+</html>
