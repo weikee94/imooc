@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Filters - Angular JS</title>
+</head>
+<body>
+    
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>Adding Filters to Expressions</p>
+        <p>Filters can be added to expressions by using the pipe character |, followed by a filter, below will demonstrate how the filter format strings to upper case.</p>
+        <p>Filter Types</p>
+        <ul>
+            <li ng-repeat="types in arrs">
+                {{ types | uppercase }}
+            </li>
+        </ul><br>
+        
+        <p>Filter filter</p>
+        <p>The filter selects a subset of an array. Be aware that filter can only be used on arrays, and it returns an array containing only the matching items. Apparently, this is filter by the alphabet I.</p>
+        <ul>
+            <li ng-repeat="gotIAlphabet in arrs | filter : 'i' ">
+                {{ gotIAlphabet}}
+            </li>
+        </ul><br>
+        
+        <p>Try to Sort the table by click</p>
+        <table border="1" width="100%">
+            <tr>
+                <th ng-click="sortMe('name')">Name</th>
+                <th ng-click="sortMe('school')">School</th>
+            </tr>
+            <tr ng-repeat="x in unsorted | orderBy:myOrder">
+                <td>{{ x.name }}</td>
+                <td>{{ x.school}}</td>
+            </tr>
+        </table>
+        
+    </div>
+    
+    
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+    angular.module("myApp",[]).controller("myCtrl",function($scope){
+       $scope.arrs = ["currency","date","filter","json","limitTo","lowercase","number","orderBy","uppercase"]; 
+       $scope.unsorted = [
+         { name: 'Z', school : 'QUT' },
+         { name: 'F', school : 'UQ'},
+         { name: 'A', school : 'MIT'},
+         { name: 'E', school : 'NUS'},
+         { name: 'J', school : 'UCL'}
+       ];
+       $scope.sortMe = function(x){
+         $scope.myOrder = x;  
+       };
+    });
+</script>
+</body>
+</html>
