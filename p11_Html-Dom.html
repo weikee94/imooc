@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HTML DOM - Angular JS</title>
+</head>
+<body>
+    <div ng-app="" ng-init="mySwitch=false">
+        <h1>This is the ng-disabed command</h1>
+        <p><button ng-disabled="mySwitch">Click Me!</button></p><br>     
+        <p><input type="checkbox" ng-model="mySwitch">Button</p>
+        <h1>{{ mySwitch }}</h1><br>
+        
+        <h1>This is the ng-show command</h1>
+        <p ng-show="true">Visible</p>
+        <p ng-show="false">Invisible</p>
+        
+        <h1>This is the ng-hide command</h1>
+        <p ng-hide="true">I am not visible</p>
+        <p ng-hide="false">I am visible</p>
+    </div>
+    
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</body>
+</html>

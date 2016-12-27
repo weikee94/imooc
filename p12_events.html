@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Events - Angular JS</title>
+</head>
+<body>
+    <h1>Angular JS Events</h1>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <ul>
+            <li ng-repeat="x in eventsList">
+                {{ x }}
+            </li>
+        </ul>
+        <p>The event directives allows us to run AngularJS Functions at certain user events.</p><br>
+        
+        <h3>ng-click</h3>
+        <button ng-click="clickFunction()">Click Me!</button>
+        <p>{{ numbersOfClick }}</p><br>
+        
+        <h3>ng-show</h3>
+        <button ng-click="toggleFunction()">Click to Show Hidden Message!</button>
+        <p ng-show="showMe">
+            This is the hidden message!!
+        </p>
+        
+        
+    </div>
+    
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+    angular.module("myApp",[]).controller("myCtrl",function($scope){
+       $scope.eventsList = [
+           "ng-blur", "ng-change", "ng-click", "ng-copy", "ng-cut", "ng-dblclick", "ng-focus", "ng-keydown", "ng-keypress", "ng-keyup", "ng-mousedown", "ng-mouseenter", "ng-mouseleave", "ng-mousemove", "ng-mouseover", "ng-mouseup", "ng-paste"
+       ]; 
+       $scope.numbersOfClick = 0;
+       $scope.clickFunction = function(){
+            $scope.numbersOfClick++;  
+       };
+       $scope.showMe = false;
+       $scope.toggleFunction = function(){
+           $scope.showMe = !$scope.showMe;
+       }
+    });
+    
+    
+</script>
+</body>
+</html>
