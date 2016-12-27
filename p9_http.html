@@ -37,8 +37,8 @@
        $scope.methodArr = ["delete", "get", "head", "jsonp", "patch", "post", "put"]; 
        $scope.propertiesArr = ["config", "data", "headers", "status", "statusText"];
        $http.get("fruits.php").success(function(response){
-           /*must use sites this is how the JSON file works*/
-           $scope.myFruits = response.sites; 
+           /*must use fruits (same name as declared in fruits php file) this is how the JSON file works*/
+           $scope.myFruits = response.fruits; 
        });
     });
 </script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Select Boxes - Angular JS</title>
+</head>
+<body>
+    <h1>Create a Select Box Using ng-options</h1>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h3>Name List:</h3>
+        <select ng-model="selectedNames" ng-options="x for x in nameList"></select>
+        <p>Note that, we will using ng-options rather than using ng-repeat because ng-options allows the selected value to be an object, while ng-repeat has a limitations which the return value must be a string.</p><br>
+        
+        <h3>Car Object List:</h3>
+        <select ng-model="selectedCars" ng-options="y.model for y in carList"></select>
+        <h5>The model you selected is: {{ selectedCars.model }}</h5>
+        <h5>The category is: {{ selectedCars.category }}</h5>
+    </div>
+    
+ 
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+    angular.module("myApp",[]).controller("myCtrl", function($scope){
+       $scope.nameList =[
+           "Ben", "James", "Mike"
+       ]; 
+       $scope.carList = [
+           {model: "Ferrari", category: "F"},
+           {model: "Honda", category: "H"},
+           {model: "Toyota", category: "T"}
+       ];
+    });
+</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
-    "sites": [        
+    "fruits": [        
         {
             "Name": "Apple",
             "Category": "A"
