@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <title>Services - Angular JS</title>
+<head>
+</head>
+<body>
+    
+    <h1>What is a Service?</h1>
+    <p>In AngularJS, a service apprently is a function or object. There are about 30 built-in services. Below will demonstrate some of those services.</p>
+    
+    
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h1>Location Services</h1>
+        <p>Note that the $location service is passed in to the controller as an argument. In order to use the services in the controller, it must be defined as a dependency.</p>
+        <p>The location of the current web page is: {{ myUrl }}</p><br>
+        
+        <h1>HTTP Services</h1>
+        <p>The message from welcome is</p>
+        <p>{{ myWelcome }}</p>
+        
+        <h1>Timeout Services: is the angular version of the window.setTimeout function</h1>
+        <p>{{ timeOutMessage }}</p><br>
+        
+        <h1>Interval Service</h1>
+        <p> {{ currentTime }} </p>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+ 
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+    angular.module("myApp",[]).controller("myCtrl",function($scope, $location, $http, $timeout, $interval){
+        $http.get("welcome.html").then(function(response){
+           $scope.myWelcome = response.data; 
+        });
+        $scope.myUrl = $location.absUrl();
+        $scope.timeOutMessage = "This is the first message!";
+        $timeout(function(){
+           $scope.timeOutMessage = "Second message!"; 
+        },2000);
+        $scope.currentTime = new Date().toLocaleTimeString();
+        $interval(function(){
+            $scope.currentTime = new Date().toLocaleTimeString();
+        },1000);
+    });
+</script>
+</body>
+</html>
