@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Routing - Angular JS</title>
+    
+    
+</head>
+<body>
+    <div ng-app="myApp">
+        <a href="#p14_api">API</a>
+        <a href="#p13_validation">Valiation</a>
+        <div ng-view></div>
+    </div>
+    
+    
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script>
+    angular.module("myApp",["ngRoute"]).config(function($routeProvider){
+        $routeProvider
+        .when("/p14_api",{
+            templateUrl: "p14_api.html"
+        })
+        .when("/p13_validation",{
+            templateUrl: "p13_validation.html"
+        });
+    });
+</script>
+</body>
+</html>
