@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Validation - Angular JS</title>
+    
+</head>
+<body>
+    <h1>Angular JS Form Validation</h1>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <h3>Input State</h3>
+        <ul>
+            <li ng-repeat="x in inputStateList">
+                {{x.name + ": " + x.desc }}
+            </li>
+        </ul>
+        
+        <h3>Form State</h3>
+        <ul>
+            <li ng-repeat="x in formStateList">
+                {{x.name + ": " + x.desc}}
+            </li>
+        </ul>
+        
+        <h3>Example</h3>
+        <form name="myForm">
+        <p>Name: <input name="myName" ng-model="myName" placeholder="eg.Jason" required>
+        <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</span>
+        </p>
+        </form>
+        
+        
+    </div>
+
+    
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+    angular.module("myApp",[]).controller("myCtrl",function($scope){
+       $scope.inputStateList = [
+           {name: "$untouched", desc: "The field has not been touched yet"},
+           {name: "$touched", desc: "The field has been touched"},
+           {name: "$pristine", desc: "The field has not been modified yet"},
+           {name: "$dirty", desc: "The field has been modified"},
+           {name: "$invalid", desc: "The field content is not valid"},
+           {name: "$valid", desc: "The field content is valid"}
+       ];
+       $scope.formStateList = [
+            {name: "$pristine", desc: "No fields have been modified yet"},
+            {name: "$dirty", desc: "One or more have been modified"},
+            {name: "$invalid", desc: "The form content is not valid"},
+            {name: "$valid", desc: "The form content is valid"},
+            {name: "$submitted", desc: "The form is submitted"}
+       ];
+    });
+</script>
+</body>
+</html>

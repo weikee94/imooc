@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Global API - Angular JS</title>
+</head>
+<body>
+    <h1>AngularJS Global API</h1>
+    <p>The usage of global API is performing common tasks like:</p>
+    <div ng-app="myApp" ng-controller="myCtrl">
+       <ul>
+            <li ng-repeat="x in taskList">
+               {{ x }}
+            </li>
+        </ul>
+        
+        <h3>Example: angular.uppercase()</h3>
+        <p>original is: {{ original }}</p>
+        <p>upper is: {{ upper }}</p>
+    </div>
+ 
+    
+
+    
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+    angular.module("myApp",[]).controller("myCtrl",function($scope){
+       $scope.taskList =[
+           "comparing objects",
+           "iterating objects",
+           "converting data"
+       ]; 
+       $scope.original = "original";
+       $scope.upper = angular.uppercase($scope.original);
+    });
+</script>
+</body>
+</html>
