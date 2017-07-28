@@ -10,3 +10,30 @@
 - react-native init FirstApp
 - react-native run-ios
 - react-native run-android
+
+# nuclide for atom + watchman service
+
+# What is React Components?
+- react components are reusable (Header, Tabs, Item, tabBar)
+- three ways to create component (ES6, ES5, Function)
+
+# Write Component
+- ES6
+    ```
+    export default class HelloComponent extends Component {
+        render() {
+            return <Text style={{fontSize:20,backgroundColor:'red'}}>Hello</Text>
+        }
+    }
+    ```
+- ES5
+    ```
+    var HelloComponent = React.createClass({
+        render() {
+            return <Text styl{{fontSize:20,backgroundColor:'red'}}Hello</Text>
+        }
+    })
+    module.exports = HelloComponent;
+    ```
+
+# All the class must be capitalize else will throw a expected-a-component-class error
