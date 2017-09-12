@@ -1,0 +1,1 @@
+- npm init 创建 package.json

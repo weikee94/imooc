@@ -1,0 +1,17 @@
+{
+  "name": "react-music-player",
+  "version": "1.0.0",
+  "description": "music player build by react ",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "react",
+    "music",
+    "player"
+  ],
+  "author": "weikee",
+  "license": "MIT"
+}
