@@ -1,1 +1,2 @@
 - npm init 创建 package.json
+- npm install react --save 安装后更新依赖
